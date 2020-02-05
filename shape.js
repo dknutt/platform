@@ -2,8 +2,8 @@
 //created this new file in our platformer folder 
 //and added the commented code below
 
-//ctx.fillStyle = "green"
-//ctx.fillRect(500,500,500,500)
+//CTX.fillStyle = "green"
+//CTX.fillRect(500,500,500,500)
 
 
 class Shape {
@@ -16,7 +16,8 @@ class Shape {
 
 	//helper functions
 	draw(){ 
-		ctx.fillRect(
+		CTX.fillStyle = "green"
+		CTX.fillRect(
 			this.x,
 			this.y,
 			this.width,
@@ -25,7 +26,7 @@ class Shape {
 	}
 }
 /*
-ctx.fillStyle = "yellow"
+CTX.fillStyle = "yellow"
 //let shape = new Shape()
 //shape.draw()
 
