@@ -15,10 +15,7 @@ window.addEventListener("keyup", event => {
 function loop() {
 	console.log("sometimes I hide things in plain sight")
 	if (keyPressed["ArrowUp"]){
-		hero.moveUp()
-	}
-	if (keyPressed["ArrowDown"]){
-		hero.moveDown()
+		hero.jump()
 	}
 
 	;if (keyPressed["ArrowLeft"]){
@@ -27,6 +24,8 @@ function loop() {
 	if (keyPressed["ArrowRight"]){
 		hero.moveRight()
 	}
+
+hero.step()
 
 	//draw everything
 	ERASE()

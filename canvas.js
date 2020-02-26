@@ -20,3 +20,4 @@ CTX.fillStyle = "lightblue"
 CTX.fillRect(-200,200,400,100) //talk about math coordinates and computer graphics coordinates
 
 
+let GRIDSIZE = CANVAS.height/12
