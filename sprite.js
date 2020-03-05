@@ -1,4 +1,3 @@
-
 class Sprite {
 	constructor(url) {
 		this.loaded = false
@@ -10,7 +9,7 @@ class Sprite {
 	}
 	draw(x, y, width, height){
 		if (this.loaded){
-			CTX.drawImage(this.image, x-width/2, y-height/2, width, height)
+			CTX.drawImage(this.image, x, y, width, height)
 		}
 	}
 }

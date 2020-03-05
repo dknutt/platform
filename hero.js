@@ -1,6 +1,7 @@
 let heroSprite = new Sprite("jumpman.png")
-let heroStand = new Sprite("images/heros/pink/alienPink_stand.png")
-let heroJump = new Sprite("images/heros/pink/alienPink_jump.png")
+let heroStand = new Sprite("images/alienPink_stand.png")
+let heroJump = new Sprite("images/alienPink_jump.png")
+
 class Hero {
 	constructor(){ // how you intialize everything
 		this.x = GRIDSIZE
@@ -25,7 +26,7 @@ class Hero {
 	}
 
 
-	step(){
+	step(platforms){
 		this.dy = this.dy + GRIDSIZE/60
 		if (this.dy > GRIDSIZE) {
 			this.dy = GRIDSIZE - 1
@@ -34,9 +35,22 @@ class Hero {
 		// apply speed to position
 		this.y = this.y + this.dy
 
+		//check if we are inside any platforms
+		platforms.forEach(p =>{
+			let isInsideY = this.y > p.y && this.y < p.y + p.height
+			let isInsideX = this.x > p.x && this.x < p.x + p.width
+			if (isInsideX && isInsideY){
+				this.y = p.y
+				this.dy = 0
+				this.airborne = false
+			}
+		})
+		
+
 		// check if hero is in the ground
 		if(this.y>CANVAS.height){
 			this.y = CANVAS.height
+			this.dy = 0
 			this.airborne = false
 		}
 	}
